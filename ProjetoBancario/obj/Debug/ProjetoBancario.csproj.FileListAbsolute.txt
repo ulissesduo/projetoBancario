@@ -1,0 +1,8 @@
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\bin\Debug\ProjetoBancario.exe.config
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\bin\Debug\ProjetoBancario.exe
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\bin\Debug\ProjetoBancario.pdb
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\obj\Debug\ProjetoBancario.csproj.AssemblyReference.cache
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\obj\Debug\ProjetoBancario.csproj.SuggestedBindingRedirects.cache
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\obj\Debug\ProjetoBancario.csproj.CoreCompileInputs.cache
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\obj\Debug\ProjetoBancario.exe
+C:\Users\uliss\source\repos\ProjetoBancario\ProjetoBancario\obj\Debug\ProjetoBancario.pdb
