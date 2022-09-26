@@ -9,6 +9,11 @@ namespace ProjetoBancario
     class GerenciadorDeConta
     {
         public double SaldoTotal { get; set; }
+        public GerenciadorDeConta()
+        {
+            SaldoTotal = 0;
+        }
+
         public void totalizarSaldo(Conta conta) 
         {
             //conta.Saldo += SaldoTotal; talvez

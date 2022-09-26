@@ -10,10 +10,15 @@ namespace ProjetoBancario
     {
         public double ReajusteMensal { get; set; }
         public ContaPoupanca() { }
-       
+        public ContaPoupanca(double saldo, double reajuste) 
+        {
+            Saldo = saldo;
+            ReajusteMensal = reajuste;
+        }
+
         public override string atualizarSaldo()
         {
-            throw new NotImplementedException();
+            return null;
         }
         public string atualizarSaldo(double reajusteMensal)
         {

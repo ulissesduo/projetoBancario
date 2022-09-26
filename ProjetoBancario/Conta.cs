@@ -20,7 +20,7 @@ namespace ProjetoBancario
         }
         public virtual string debitar(double valor) 
         {
-            if (Saldo > valor) 
+            if (Saldo > 0) 
             {
                 Saldo = Saldo - valor;
                 return " Saldo: " + Saldo;
@@ -31,5 +31,6 @@ namespace ProjetoBancario
             }
         }
         public abstract string atualizarSaldo();
+
     }
 }

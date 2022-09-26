@@ -22,7 +22,7 @@ namespace ProjetoBancario
 
         public override string debitar(double valor)
         {
-            if (LimiteEspecial > Saldo) 
+            if (LimiteEspecial >= Saldo) 
             {
                 Saldo -= valor;
                 return "Saldo: " + Saldo;

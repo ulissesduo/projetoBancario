@@ -10,12 +10,25 @@ namespace ProjetoBancario
     {
         static void Main(string[] args)
         {
-            Conta cc = new ContaCorrente(1000, 5000);
-            Console.WriteLine( cc.Saldo );
-            cc.debitar(100);
+            Conta cc = new ContaCorrente(500, 1000);
+            Conta cp = new ContaCorrente(5000, 0.01);
+            
+            cc.credita(100);
+            cc.debitar(200);
+            cc.atualizarSaldo();
             Console.WriteLine(cc.Saldo);
-            cc.credita(200);
-            Console.WriteLine(cc.Saldo);
+            Console.WriteLine(cc.atualizarSaldo());
+
+            Console.WriteLine(" ========================================== ");
+            Console.WriteLine(cp.Saldo);
+            cp.credita(100);
+            Console.WriteLine(cp.Saldo);
+            cp.debitar(200);
+            Console.WriteLine(cp.Saldo);
+            cp.atualizarSaldo();
+            Console.WriteLine(cp.Saldo);
+            Console.WriteLine(cp.atualizarSaldo());
+
             Console.ReadLine();
         }
     }
