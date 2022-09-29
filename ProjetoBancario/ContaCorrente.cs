@@ -17,32 +17,25 @@ namespace ProjetoBancario
         public ContaCorrente(double saldo, double limite)
         {
             this.LimiteEspecial = limite;
-            Saldo = saldo;
+            setSaldo( saldo);
         }
 
-        public override string debitar(double valor)
+        public override bool debitar(double valor)
         {
-            if (LimiteEspecial >= Saldo) 
+            if (valor <= getSaldo()+ LimiteEspecial) 
             {
-                Saldo -= valor;
-                return "Saldo: " + Saldo;
+                setSaldo(getSaldo() - valor);
+                return true;
             }
-            else 
-            {
-                return ""; 
-            }
+            return false;
         }
-        public override string atualizarSaldo()
+        public override void atualizarSaldo()
         { 
-            double saldoAnterior = Saldo;
-            if (Saldo < 0)
+            if (getSaldo() < 0)
             {
-                Saldo = (Saldo * 0.08) - Saldo;
-                return "Saldo anterior: " + saldoAnterior + " e saldo atual: " + Saldo;
-            }
-            else 
-            {
-                return null;
+                LimiteEspecial = getSaldo() * 0.08;
+                setSaldo(getSaldo() - LimiteEspecial); 
+                
             }
         }
     }

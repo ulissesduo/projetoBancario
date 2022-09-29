@@ -10,26 +10,103 @@ namespace ProjetoBancario
     {
         static void Main(string[] args)
         {
+            double valor;
+            int op = -1, opcao = -1;
+
+            Conta cp = new ContaPoupanca(5000, 001,0);
             Conta cc = new ContaCorrente(500, 1000);
-            Conta cp = new ContaCorrente(5000, 0.01);
-            
-            cc.credita(100);
-            cc.debitar(200);
-            cc.atualizarSaldo();
-            Console.WriteLine(cc.Saldo);
-            Console.WriteLine(cc.atualizarSaldo());
+            GerenciadorDeConta gc = new GerenciadorDeConta();
 
-            Console.WriteLine(" ========================================== ");
-            Console.WriteLine(cp.Saldo);
-            cp.credita(100);
-            Console.WriteLine(cp.Saldo);
-            cp.debitar(200);
-            Console.WriteLine(cp.Saldo);
-            cp.atualizarSaldo();
-            Console.WriteLine(cp.Saldo);
-            Console.WriteLine(cp.atualizarSaldo());
+            do
+            {
+                Console.WriteLine("1 - Conta corrente\n2 - Poupança\n3 - Consultar total dos saldo\n0 - Sair");
+                opcao = int.Parse(Console.ReadLine());
+                switch (opcao)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        do
+                        {
+                            Console.WriteLine("1 - Depositar\n2 - Sacar\n3 - Consultar saldo\n4 - Reajustar saldo\n0 - Sair");
+                            op = int.Parse(Console.ReadLine());
+                            switch (op)
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                    Console.WriteLine("Valor a debitar");
+                                    valor = double.Parse(Console.ReadLine());
+                                    cc.credita(valor);
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Valor a debitar");
+                                    valor = double.Parse(Console.ReadLine());
+                                    cc.debitar(valor);
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Valor a debitar");
+                                    cc.atualizarSaldo();
+                                    Console.WriteLine(cc.getSaldo());
+                                    cc.atualizarSaldo();
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Reajustar?");
+                                    break;
+                                default:
+                                    Console.WriteLine("Inválido");
+                                    break;
+                            }
+                        }
+                        while (op != 0);
+                        break;
 
-            Console.ReadLine();
+                    case 2:
+                        do
+                        {   Console.WriteLine("1 - Depositar\n2 - Sacar\n3 - Cconsultar saldo\n4 - Reajustar saldo\n0 - Sair");
+                            op = int.Parse(Console.ReadLine());
+                            switch (op)
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                    Console.WriteLine("Valor a debitar");
+                                    valor = double.Parse(Console.ReadLine());
+                                    cp.credita(valor);
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Valor a debitar");
+                                    valor = double.Parse(Console.ReadLine());
+                                    cp.debitar(valor);
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Valor a debitar");
+                                    cp.atualizarSaldo();
+                                    Console.WriteLine(cp.getSaldo());
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Reajustar?");
+                                    break;
+                                default:
+                                    Console.WriteLine("Inválido");
+                                    break;
+                            }
+                        }
+                        while (op != 0);
+                        break;
+
+                    case 3:
+                        do
+                        {
+                            gc.totalizarSaldo(cc);
+                            gc.totalizarSaldo(cp);
+
+                        }
+                        while (op != 0);
+                        break;
+                }
+            }
+            while (opcao != 0);
         }
     }
 }

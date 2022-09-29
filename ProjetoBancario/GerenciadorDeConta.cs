@@ -8,16 +8,22 @@ namespace ProjetoBancario
 {
     class GerenciadorDeConta
     {
-        public double SaldoTotal { get; set; }
+        private double SaldoTotal;
         public GerenciadorDeConta()
         {
             SaldoTotal = 0;
         }
-
+        public double getSaldoTotal() 
+        {
+            return SaldoTotal;
+        }
+        public void setSaldoTotal(double saldototal) 
+        {
+            SaldoTotal = saldototal;
+        }
         public void totalizarSaldo(Conta conta) 
         {
-            //conta.Saldo += SaldoTotal; talvez
-            SaldoTotal = SaldoTotal + conta.Saldo;
+            SaldoTotal = SaldoTotal + conta.getSaldo();
         }
     }
 }

@@ -8,24 +8,31 @@ namespace ProjetoBancario
 {
     class ContaPoupanca : Conta
     {
-        public double ReajusteMensal { get; set; }
-        public ContaPoupanca() { }
-        public ContaPoupanca(double saldo, double reajuste) 
+        private double ReajusteMensal { get; set; }
+        public ContaPoupanca() :base() { }
+        public ContaPoupanca(double saldo, int numero, double reajuste) : base(saldo, numero) 
         {
-            Saldo = saldo;
             ReajusteMensal = reajuste;
         }
-
-        public override string atualizarSaldo()
+        public void setReajuste(double reajuste) 
         {
-            return null;
+            ReajusteMensal = reajuste;
         }
-        public string atualizarSaldo(double reajusteMensal)
+        public double getReajuste() 
         {
-            double saldoAnterior = Saldo;
-            ReajusteMensal = reajusteMensal;
-            Saldo = (Saldo * (reajusteMensal / 100)) + Saldo;
-            return "Saldo anterior: " + saldoAnterior + " e saldo atual: " + Saldo;
+            return ReajusteMensal;
+        }
+
+        public override void atualizarSaldo()
+        {
+        }
+        public void atualizarSaldo(double reajusteMensal)
+        {
+            if(getSaldo() > 0)
+            {
+                ReajusteMensal = getSaldo() * reajusteMensal;
+                setSaldo(getSaldo() + reajusteMensal);
+            }
         }
     }
 }
