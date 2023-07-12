@@ -13,7 +13,7 @@ namespace ProjetoBancario
             double valor;
             int op = -1, opcao = -1;
 
-            Conta cp = new ContaPoupanca(5000, 001,0);
+            Conta cp = new ContaPoupanca(5000, 001, 0);
             Conta cc = new ContaCorrente(500, 1000);
             GerenciadorDeConta gc = new GerenciadorDeConta();
 
@@ -63,7 +63,8 @@ namespace ProjetoBancario
 
                     case 2:
                         do
-                        {   Console.WriteLine("1 - Depositar\n2 - Sacar\n3 - Cconsultar saldo\n4 - Reajustar saldo\n0 - Sair");
+                        {
+                            Console.WriteLine("1 - Depositar\n2 - Sacar\n3 - Consultar saldo\n4 - Reajustar saldo\n0 - Sair");
                             op = int.Parse(Console.ReadLine());
                             switch (op)
                             {
@@ -100,7 +101,7 @@ namespace ProjetoBancario
                         {
                             gc.totalizarSaldo(cc);
                             gc.totalizarSaldo(cp);
-
+                            Console.WriteLine(cc.getSaldo() + "\n" + cp.getSaldo() + "\nTotal é igual a: " + gc.getSaldoTotal());
                         }
                         while (op != 0);
                         break;

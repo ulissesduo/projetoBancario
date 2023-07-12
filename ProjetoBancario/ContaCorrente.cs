@@ -34,8 +34,7 @@ namespace ProjetoBancario
             if (getSaldo() < 0)
             {
                 LimiteEspecial = getSaldo() * 0.08;
-                setSaldo(getSaldo() - LimiteEspecial); 
-                
+                setSaldo(getSaldo() - LimiteEspecial);
             }
         }
     }
